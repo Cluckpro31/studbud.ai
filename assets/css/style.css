@@ -1,0 +1,196 @@
+/* ==========================================================
+   🌸 Bloom AI - Cozy Study Theme
+   ========================================================== */
+
+/* ---------- Google Font ---------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ---------- App ---------- */
+
+html,
+body,
+[class*="css"] {
+    font-family: 'Poppins', sans-serif;
+}
+
+.stApp {
+    background: #FFF8F0;
+}
+
+/* ---------- Main Container ---------- */
+
+.block-container {
+    padding-top: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    max-width: 1300px;
+}
+
+/* ---------- Sidebar ---------- */
+
+section[data-testid="stSidebar"] {
+    background: #FFE8EC;
+    border-right: 2px solid #F1DFC8;
+}
+
+section[data-testid="stSidebar"] * {
+    color: #5B4B3A;
+}
+
+/* ---------- Headings ---------- */
+
+h1 {
+    color: #4A3B2F;
+    font-size: 3rem !important;
+    font-weight: 700;
+}
+
+h2 {
+    color: #5A4A42;
+}
+
+h3 {
+    color: #6D597A;
+}
+
+p {
+    color: #665B55;
+    font-size: 18px;
+}
+
+/* ---------- Divider ---------- */
+
+hr {
+    border: none;
+    border-top: 1px solid #EEDBC9;
+}
+
+/* ---------- Text Input ---------- */
+
+.stTextInput input {
+
+    background: #FFFFFF;
+
+    border-radius: 18px;
+
+    border: 2px solid #F7C8DA;
+
+    color: #4A4A4A;
+
+    padding: 14px;
+
+    font-size: 16px;
+}
+
+.stTextInput input:focus {
+
+    border: 2px solid #B8E3FF;
+
+    box-shadow: none;
+}
+
+/* ---------- Buttons ---------- */
+
+.stButton>button {
+
+    width: 100%;
+
+    background: #F8C8DC;
+
+    color: #5B4B3A;
+
+    border: none;
+
+    border-radius: 18px;
+
+    padding: 12px;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    transition: all .25s ease;
+}
+
+.stButton>button:hover {
+
+    background: #CDEBFF;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* ---------- Chat Messages ---------- */
+
+div[data-testid="stChatMessage"] {
+
+    background: #FFFCF7;
+
+    border-radius: 20px;
+
+    padding: 16px;
+
+    margin-bottom: 18px;
+
+    border: 1px solid #F4E5D4;
+
+    box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+}
+
+/* ---------- Metric Cards ---------- */
+
+div[data-testid="metric-container"] {
+
+    background: #FFF6E9;
+
+    border-radius: 20px;
+
+    padding: 18px;
+
+    border: 1px solid #F4E5D4;
+
+    box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+}
+
+/* ---------- Success Box ---------- */
+
+div[data-testid="stAlert"] {
+
+    border-radius: 18px;
+
+    border: none;
+}
+
+/* ---------- Expanders ---------- */
+
+details {
+
+    background: #FFFCF7;
+
+    border-radius: 18px;
+
+    padding: 10px;
+
+    border: 1px solid #F4E5D4;
+}
+
+/* ---------- Scrollbar ---------- */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #FFF4EA;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #F8C8DC;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #CDEBFF;
+}
