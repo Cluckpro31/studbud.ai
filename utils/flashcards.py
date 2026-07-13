@@ -2,21 +2,22 @@ import ollama
 
 MODEL = "gemma3:1b"
 
-def generate_quiz(question, context):
+def generate_flashcards(question, context):
 
     prompt = f"""
 You are an NCERT teacher.
 
-Using ONLY the NCERT context below,
+Using ONLY this context,
 
-create exactly 5 multiple-choice questions.
+generate exactly 5 flashcards.
 
-Rules:
+Format
 
-- 4 options
-- Mention correct answer
-- Give one-line explanation.
-- Do NOT ask outside NCERT.
+Front:
+...
+
+Back:
+...
 
 Context:
 

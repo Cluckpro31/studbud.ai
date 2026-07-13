@@ -1,21 +1,14 @@
-import requests
+from utils.llm import ask_ai
 
-url = "http://127.0.0.1:11434/api/chat"
+print("🌸 Nova is ready! (type 'exit' to quit)\n")
 
-payload = {
-    "model": "gemma3:1b",
-    "messages": [
-        {
-            "role": "user",
-            "content": "Why is the sky blue?"
-        }
-    ],
-    "stream": False
-}
+while True:
 
-print("Sending request...")
+    question = input("You: ")
 
-response = requests.post(url, json=payload, timeout=120)
+    if question.lower() == "exit":
+        break
 
-print(response.status_code)
-print(response.text)
+    print("\nNova 🌸:\n")
+    print(ask_ai(question))
+    print()

@@ -25,10 +25,10 @@ for file in os.listdir(PDF_FOLDER):
         documents.extend(loader.load())
 
 print(f"✅ Loaded {len(documents)} pages.")
-
 splitter = RecursiveCharacterTextSplitter(
-    chunk_size=500,
-    chunk_overlap=100
+    chunk_size=1000,
+    chunk_overlap=200,
+    separators=["\n\n", "\n", ".", " ", ""]
 )
 
 chunks = splitter.split_documents(documents)
