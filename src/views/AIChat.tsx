@@ -178,13 +178,20 @@ const AIChat: React.FC = () => {
           <p>Powered by offline On-Device AI</p>
         </div>
         {!isReady && (
-          <button 
-            className="btn-primary" 
-            onClick={initializeEngine} 
-            disabled={isLoading}
-          >
-            {isLoading ? <><RefreshCw size={16} className="spin" /> {progress}</> : <><Download size={16} /> Download & Initialize Model (~2GB)</>}
-          </button>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '8px' }}>
+            <button 
+              className="btn-primary" 
+              onClick={initializeEngine} 
+              disabled={isLoading}
+            >
+              {isLoading ? <><RefreshCw size={16} className="spin" /> {progress}</> : <><Download size={16} /> Download & Initialize Model (~2GB)</>}
+            </button>
+            {progress && progress.startsWith('Error') && (
+              <small style={{ color: '#ef4444', maxWidth: '300px', textAlign: 'right' }}>
+                {progress}
+              </small>
+            )}
+          </div>
         )}
         {isReady && <span className="badge outline"><Cpu size={14} /> Local AI Active</span>}
       </div>
