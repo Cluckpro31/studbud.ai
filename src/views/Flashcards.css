@@ -1,0 +1,142 @@
+.flashcards-view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 24px;
+}
+
+.flashcards-header h2 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.flashcards-header p {
+  color: var(--text-secondary);
+}
+
+.flashcards-container {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 24px;
+  flex: 1;
+}
+
+.spinner-cyan {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(29, 92, 99, 0.2);
+  border-top-color: var(--accent-secondary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.flashcard-play {
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flashcard {
+  width: 100%;
+  height: 350px;
+  perspective: 1000px;
+  cursor: pointer;
+  margin-bottom: 32px;
+}
+
+.flashcard-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.flashcard.flipped .flashcard-inner {
+  transform: rotateY(180deg);
+}
+
+.flashcard-front, .flashcard-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  border-radius: var(--radius-xl);
+  background: var(--bg-card);
+  border: var(--border-glass);
+  box-shadow: var(--shadow-card);
+}
+
+.flashcard-front {
+  background: linear-gradient(145deg, rgba(30,36,46,0.9), rgba(21,26,34,0.9));
+}
+
+.flashcard-front h3 {
+  font-size: 24px;
+  line-height: 1.4;
+  margin-bottom: 24px;
+}
+
+.flip-hint {
+  font-size: 14px;
+  color: var(--text-muted);
+  position: absolute;
+  bottom: 24px;
+}
+
+.flashcard-back {
+  background: linear-gradient(145deg, rgba(29,92,99,0.1), rgba(21,26,34,0.9));
+  transform: rotateY(180deg);
+  border-color: rgba(29, 92, 99, 0.3);
+}
+
+.flashcard-back p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.flashcard-actions {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  justify-content: center;
+}
+
+.action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 32px;
+  border-radius: var(--radius-lg);
+  background: rgba(0,0,0,0.2);
+  border: 1px solid rgba(255,255,255,0.05);
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.action-btn span {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.action-btn.incorrect:hover {
+  background: rgba(245, 101, 101, 0.15);
+  border-color: var(--accent-red);
+  color: var(--accent-red);
+}
+
+.action-btn.correct:hover {
+  background: rgba(72, 187, 120, 0.15);
+  border-color: var(--accent-green);
+  color: var(--accent-green);
+}

@@ -1,0 +1,52 @@
+{
+  "subjects": [
+    {
+      "id": "chem-12",
+      "name": "Chemistry Class 12 (NCERT)",
+      "chapters": [
+        {
+          "id": "chem-12-1",
+          "title": "Solid State",
+          "content": "Solids have definite mass, volume, and shape due to short inter-molecular distances and strong intermolecular forces. The constituent particles (atoms, molecules, or ions) have fixed positions. Solids can be classified as crystalline or amorphous. Crystalline solids have a regular ordered array of components held together by uniform intermolecular forces, whereas amorphous solids are not arranged in regular arrays. Important types of crystal lattices are simple cubic, body-centered cubic (BCC), and face-centered cubic (FCC)."
+        },
+        {
+          "id": "chem-12-10",
+          "title": "Haloalkanes and Haloarenes",
+          "content": "The replacement of hydrogen atom(s) in an aliphatic or aromatic hydrocarbon by halogen atom(s) results in the formation of alkyl halide (haloalkane) and aryl halide (haloarene), respectively. Haloalkanes contain halogen atom(s) attached to the sp3 hybridized carbon atom of an alkyl group whereas haloarenes contain halogen atom(s) attached to sp2 hybridized carbon atom(s) of an aryl group."
+        },
+        {
+          "id": "chem-12-3",
+          "title": "Electrochemistry",
+          "content": "Electrochemistry is the study of production of electricity from energy released during spontaneous chemical reactions and the use of electrical energy to bring about non-spontaneous chemical transformations. A galvanic cell converts chemical energy into electrical energy. The standard electrode potential is measured with respect to standard hydrogen electrode (SHE). Kohlrausch's law of independent migration of ions states that limiting molar conductivity of an electrolyte can be represented as the sum of the individual contributions of the anion and cation of the electrolyte."
+        }
+      ]
+    },
+    {
+      "id": "bio-11",
+      "name": "Biology Class 11 (NCERT)",
+      "chapters": [
+        {
+          "id": "bio-11-8",
+          "title": "Cell: The Unit of Life",
+          "content": "All organisms are composed of cells or aggregates of cells. Cells vary in their shape, size, and activities/functions. Based on the presence or absence of a membrane-bound nucleus and other organelles, cells and hence organisms can be named as eukaryotic or prokaryotic. A typical eukaryotic cell consists of a cell membrane, nucleus and cytoplasm. The mitochondria help in oxidative phosphorylation and generation of adenosine triphosphate (ATP). They are bound by double membrane; the outer membrane is smooth and inner one folds into several cristae."
+        },
+        {
+          "id": "bio-11-13",
+          "title": "Photosynthesis in Higher Plants",
+          "content": "Photosynthesis is a physico-chemical process by which green plants use light energy to drive the synthesis of organic compounds. It takes place in the chloroplasts. The light reaction consists of light absorption, water splitting, oxygen release, and the formation of high-energy chemical intermediates, ATP and NADPH. The dark reaction (Calvin cycle) uses ATP and NADPH to fix CO2 into sugars."
+        }
+      ]
+    },
+    {
+      "id": "phy-10",
+      "name": "Physics Class 10 (ICSE)",
+      "chapters": [
+        {
+          "id": "phy-10-1",
+          "title": "Force, Work, Power and Energy",
+          "content": "Work is said to be done only when the force applied on a body makes the body move. Work = Force × displacement in the direction of force (W = F × S). Power is the rate of doing work. Power = Work / Time (P = W/t). Energy is the capacity to do work. The SI unit of work and energy is Joule (J), and power is Watt (W). The law of conservation of energy states that energy can neither be created nor destroyed; it can only change from one form to another."
+        }
+      ]
+    }
+  ]
+}
