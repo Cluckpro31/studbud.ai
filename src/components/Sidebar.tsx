@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { BookOpen, Calendar, HelpCircle, MessageSquare, Settings, CheckSquare, Sparkles, Sword } from 'lucide-react';
+import { BookOpen, Calendar, HelpCircle, MessageSquare, Settings, Sparkles, Sword } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import './Sidebar.css';
 

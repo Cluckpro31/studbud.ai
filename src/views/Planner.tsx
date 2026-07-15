@@ -28,7 +28,7 @@ const Planner: React.FC = () => {
   const { generateText, isReady } = useWebLLM();
   const [aiInsight, setAiInsight] = useState<string | null>(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
-  const [weeklyGoal, setWeeklyGoal] = useState(20);
+  const [weeklyGoal] = useState(20);
 
   // Load from local storage on mount
   useEffect(() => {

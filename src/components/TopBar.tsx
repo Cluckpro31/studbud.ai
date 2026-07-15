@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Search, Bell, Zap } from 'lucide-react';
+import { Search, Zap } from 'lucide-react';
 import './TopBar.css';
 
 export const TopBar: React.FC = () => {
