@@ -14,14 +14,43 @@ const DAYS_OF_WEEK = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const Dashboard: React.FC = () => {
   const navigate = useNavigate();
   const [weeklyHours, setWeeklyHours] = useState<number[]>(Array(6).fill(0));
+  const [streak, setStreak] = useState(0);
+  const [points, setPoints] = useState(0);
 
   useEffect(() => {
     const loadData = async () => {
+      // Calculate Streak
+      const lastActive = await localforage.getItem<string>('studbud_last_active_date');
+      let currentStreak = await localforage.getItem<number>('studbud_study_streak') || 0;
+      const today = new Date().toDateString();
+      
+      const yesterdayDate = new Date();
+      yesterdayDate.setDate(yesterdayDate.getDate() - 1);
+      const yesterday = yesterdayDate.toDateString();
+
+      if (lastActive !== today) {
+        if (lastActive === yesterday) {
+          currentStreak += 1;
+        } else {
+          currentStreak = lastActive ? 1 : 0;
+        }
+        await localforage.setItem('studbud_study_streak', currentStreak);
+        await localforage.setItem('studbud_last_active_date', today);
+      }
+      setStreak(currentStreak);
+
+      // Load Sessions
       const sessions = await localforage.getItem<StudySession[]>('studbud_planner_sessions') || [];
       const hours = DAYS_OF_WEEK.map(d => {
         return sessions.filter(s => s.day === d).reduce((acc, curr) => acc + curr.durationHours, 0);
       });
       setWeeklyHours(hours);
+
+      // Calculate Points
+      const queries = await localforage.getItem<number>('studbud_chat_queries') || 0;
+      const totalHours = sessions.reduce((acc, curr) => acc + curr.durationHours, 0);
+      const calculatedPoints = (totalHours * 100) + (queries * 10) + (currentStreak * 50);
+      setPoints(calculatedPoints);
     };
     loadData();
   }, []);
@@ -51,7 +80,7 @@ const Dashboard: React.FC = () => {
               </div>
               <div className="stat-info">
                 <span className="stat-label">Study Streak</span>
-                <span className="stat-value">12 Days 🔥</span>
+                <span className="stat-value">{streak} Days 🔥</span>
               </div>
             </div>
             
@@ -61,7 +90,7 @@ const Dashboard: React.FC = () => {
               </div>
               <div className="stat-info">
                 <span className="stat-label">Points Earned</span>
-                <span className="stat-value">4,850 XP</span>
+                <span className="stat-value">{points.toLocaleString()} XP</span>
               </div>
             </div>
           </div>
