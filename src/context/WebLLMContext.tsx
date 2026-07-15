@@ -15,7 +15,7 @@ interface WebLLMContextType {
 const WebLLMContext = createContext<WebLLMContextType | undefined>(undefined);
 
 // Using a smaller 1B model for extreme speed and low memory usage
-const SELECTED_MODEL = "Llama-3.2-1B-Instruct-q4f16_1-MLC";
+const SELECTED_MODEL = "Llama-3.2-1B-Instruct-q4f32_1-MLC";
 
 export const WebLLMProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [engine, setEngine] = useState<any>(null);
@@ -61,7 +61,8 @@ export const WebLLMProvider: React.FC<{ children: ReactNode }> = ({ children }) 
       setProgress('Ready');
     } catch (error: any) {
       console.error("Failed to load WebLLM:", error);
-      setProgress(`Error: ${error.message || 'Failed to load model.'}`);
+      const errorMsg = error?.message || (typeof error === 'string' ? error : JSON.stringify(error));
+      setProgress(`Error: ${errorMsg || 'Failed to load model.'}`);
     } finally {
       setIsLoading(false);
     }
