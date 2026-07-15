@@ -1,75 +1,52 @@
-# React + TypeScript + Vite
+# 🧠 StudBud AI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to **StudBud AI** - your privacy-first, fully offline, and insanely smart AI Study Companion. 
 
-Currently, two official plugins are available:
+Built with React and Vite, StudBud AI runs entirely in your browser. Thanks to cutting-edge WebGPU and WebLLM technology, the AI runs 100% locally on your machine. This means zero latency, zero subscription fees, and total privacy for your notes and questions.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Live Demo & Offline Installation
 
-## React Compiler
+You don't need to build the source code to use StudBud! You can install the fully-packaged offline app directly from your browser.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**👉 [Launch StudBud AI](https://cluckpro31.github.io/studbud.ai/)**
 
-## Expanding the ESLint configuration
+### How to Install for Offline Desktop Use
+1. Open the [Launch Link](https://cluckpro31.github.io/studbud.ai/) in **Google Chrome** or **Microsoft Edge**.
+2. Look at the right side of your URL bar for the **Install** icon (a screen with a downward arrow), or click the browser menu (⋮) and select **"Install studbud.ai"**.
+3. Confirm the installation.
+4. **You're Done!** StudBud will now open as a standalone desktop application. It caches the AI models and the UI directly to your computer. You can disconnect from Wi-Fi entirely and the app will continue to function perfectly!
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🌟 Key Features
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Local AI Engine**: Powered by WebLLM, it downloads the model locally. Ask anything, summarize papers, or chat without an internet connection.
+- **Dynamic Study Planner**: Plan your week visually. Create sessions and track your progress.
+- **Analytics Hub**: Gamify your studying. Track your daily **Study Streak**, total hours studied, and earn XP points dynamically.
+- **Retro Medieval Mode**: Personalize your interface. Toggle between the sleek modern dark mode and an immersive medieval pixel-art theme.
+- **Privacy-First**: No data leaves your machine. Your chats, analytics, and schedules are stored locally using IndexedDB.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🛠️ For Developers
 
-```
+If you want to run the project locally or contribute:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Cluckpro31/studbud.ai.git
+   ```
+2. Navigate into the directory and install dependencies:
+   ```bash
+   cd studbud.ai
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+## ⚙️ Tech Stack
+- **Frontend**: React 19, TypeScript, Vite
+- **Styling**: Vanilla CSS, Lucide Icons, Glassmorphism UI
+- **AI Integration**: `@mlc-ai/web-llm` (WebGPU)
+- **Data Persistence**: `localforage` (IndexedDB)
+- **Deployment**: GitHub Pages, Vite PWA Plugin
